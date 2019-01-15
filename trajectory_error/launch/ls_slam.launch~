@@ -1,0 +1,9 @@
+<launch>
+
+  <node pkg="trajectory_error" type="main" name="trajectory_error" output="screen"/>
+
+   
+  <node name="rvizvisualisation" pkg="rviz" type="rviz" output="log" args="-d $(find trajectory_error)/rviz/trajectory_error.rviz" />
+ 
+
+</launch>

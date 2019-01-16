@@ -14,8 +14,8 @@
 #include<eigen3/Eigen/Geometry>
 #include<sophus/se3.h>
 
-std::string groundtruth_file = "/home/cbin/slam_wc/src/trajectory_error/data/groundtruth.txt";
-std::string estimated_file = "/home/cbin/slam_wc/src/trajectory_error/data/estimated.txt";
+std::string groundtruth_file;
+std::string estimated_file;
 
 template <class Type>
 Type stringToNum(const std::string& str)
@@ -126,7 +126,11 @@ void trajectory_error::pub_msg(std::string& time,Eigen::Vector3d & t,Eigen::Quat
 int main(int argc, char **argv)
 {
     ros::init(argc, argv, "trajectory_error");
-    ros::NodeHandle n;
+    ros::NodeHandle n("~");
+    if(!private_n.getParam("groundtruth_file",groundtruth_file))
+        std::cout<<"NO groundtruth_file"<<std::endl;
+    private_n.getParam("estimated_file",estimated_file);
+    std::cout<<argc<<"estimated_file"<<estimated_file<<std::endl;
     trajectory_error te;
 
     std::cout<<"RMSE : "<<te.conputer_error(groundtruth_file,estimated_file)<<std::endl;;

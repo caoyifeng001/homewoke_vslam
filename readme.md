@@ -11,5 +11,5 @@
     roslaunch trajectory_error trajectory_error.launch
 
 #### RMSE计算
-    ![picture1](https://github.com/caoyifeng001/trajectory_error/tree/master/picture/1.png)
-    ![picture2](https://github.com/caoyifeng001/trajectory_error/tree/master/picture/2.png)
+    ![](https://github.com/caoyifeng001/trajectory_error/tree/master/picture/1.png )
+    ![](https://github.com/caoyifeng001/trajectory_error/tree/master/picture/2.png )

@@ -126,7 +126,7 @@ void trajectory_error::pub_msg(std::string& time,Eigen::Vector3d & t,Eigen::Quat
 int main(int argc, char **argv)
 {
     ros::init(argc, argv, "trajectory_error");
-    ros::NodeHandle n("~");
+    ros::NodeHandle n("~");   //NOTE 获取私有参数要加 “～”
     if(!private_n.getParam("groundtruth_file",groundtruth_file))
         std::cout<<"NO groundtruth_file"<<std::endl;
     private_n.getParam("estimated_file",estimated_file);

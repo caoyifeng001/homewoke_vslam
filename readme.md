@@ -15,3 +15,7 @@
 ![](./picture/1.png )
 
 ![](./picture/2.png )
+
+#### 数据文件
+
+    trajectory_error.launch 中修改自己的数据文件
